@@ -75,9 +75,6 @@ function scene_scanner(scene, room_id)
         local group = obs.obs_group_from_source(scene_item_source)
 
         if group ~= nil then
-            -- グループ名は出力しなくてもいいかも
-            -- local group_name = obs.obs_source_get_name(scene_item_source)
-            -- obs.script_log(obs.LOG_INFO, string.format('グループが見つかりました: %s', group_name))        
             group_scanner(group, room_id)
         else
             scene_item_scanner(scene_item_source, room_id)
